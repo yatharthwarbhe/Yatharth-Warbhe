@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yatharth-warbhe.netlify.app/sitemap.xml
