@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yatharth Warbhe | Entrepreneur & Frontend Web Developer</title>
+    
+    <!-- Structured SEO Metadata to answer: Who is Yatharth Warbhe? -->
+    <meta name="description" content="Yatharth Warbhe is an entrepreneur, frontend web developer, and certified business analyst. Discover Yatharth Warbhe's boutique web design projects and credentials.">
+    <meta name="keywords" content="Yatharth Warbhe, Who is Yatharth Warbhe, Yatharth Warbhe Entrepreneur, Yatharth Warbhe Frontend Developer, HTML CSS Web Developer, Business Analysis, Nagpur Developer">
+    <meta name="author" content="Yatharth Warbhe">
+    
+    <!-- Open Graph Metadata for Social Platforms -->
+    <meta property="og:title" content="Yatharth Warbhe | Entrepreneur & Frontend Web Developer">
+    <meta property="og:description" content="Discover the digital ecosystem of Yatharth Warbhe: pioneering frontend architecture, HTML/CSS design, and verified business strategy.">
+    <meta property="og:image" content="your-profile-photo.jpg">
+    <meta property="og:type" content="profile">
+
+    <!-- Google Search Engine Crawler Instruction - JSON-LD Structured Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Yatharth Warbhe",
+      "jobTitle": "Entrepreneur and Frontend Web Developer",
+      "description": "Yatharth Warbhe is an entrepreneur and frontend web developer who designs premium, high-conversion landing pages and is certified in Business Analysis & Process Management also he was class 10th School Topper.",
+      "knowsAbout": ["Frontend Web Development", "HTML", "CSS", "Business Analysis", "Process Management", "Entrepreneurship"],
+      "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "School Of scholars,Hinganghat"
+  }
+    }
+    </script>
+
+    <!-- Tailwind CSS Engine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            lightBg: '#fafafb',
+                            slatePrimary: '#0f172a',
+                            slateSecondary: '#475569',
+                            platinumBorder: 'rgba(15, 23, 42, 0.08)',
+                            accentBlue: '#3b82f6',
+                            glassWhite: 'rgba(255, 255, 255, 0.75)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            background-color: #fafafb;
+            color: #0f172a;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            cursor: none; /* Custom cinematic cursor active */
+        }
+
+        /* WebGL Light Background Canvas */
+        #webgl-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            pointer-events: none;
+            transition: opacity 1s ease;
+        }
+
+        /* Ultra Premium Light Glass Panels */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(15, 23, 42, 0.06);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.03);
+        }
+
+        .glass-panel-hover {
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .glass-panel-hover:hover {
+            border-color: rgba(59, 130, 246, 0.25);
+            background: rgba(255, 255, 255, 0.85);
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px 0 rgba(15, 23, 42, 0.06);
+        }
+
+        /* Dynamic Slate-Gradient Header Text */
+        .text-gradient {
+            background: linear-gradient(135deg, #0f172a 20%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Interactive Fluid Cursor (Optimized for Light Backgrounds) */
+        .custom-cursor {
+            width: 8px;
+            height: 8px;
+            background: #0f172a;
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+
+        .custom-cursor-follower {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(15, 23, 42, 0.15);
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9998;
+            transition: transform 0.08s ease-out, border-color 0.2s, width 0.2s, height 0.2s;
+        }
+
+        /* Responsive hiding of custom cursor on touch viewports */
+        @media (max-width: 1024px) {
+            body { cursor: default; }
+            .custom-cursor, .custom-cursor-follower { display: none !important; }
+        }
+
+        /* Scroll Progress Bar at Top */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(to right, #0f172a, #3b82f6);
+            z-index: 100;
+            width: 0%;
+        }
+
+        /* Dynamic Grid Background Texture overlay */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            background-image: radial-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Screen Overlays -->
+    <div class="bg-grid"></div>
+    <div id="scroll-progress"></div>
+
+    <!-- Web Audio & Navigation Header -->
+    <header class="fixed top-0 left-0 w-full px-1 py-1 md:px-1 flex justify-between items-center z-50 mix-blend-multiply">
+        <a href="#hero" class="font-mono text-sm tracking-[0.1em] font-bold text-slate-500 uppercase hover:opacity-50 transition-opacity">
+            YATHARTH_WARBHE
+        </a>
+        <div class="flex items-center gap-6">
+            <!-- Web Audio Toggle -->
+            <button id="audio-toggle" class="flex items-center gap-2 group focus:outline-none">
+                <span class="font-mono text-[10px] tracking-widest text-slate-500 group-hover:text-slate-900 transition-colors uppercase">SOUND OFF</span>
+                <div class="w-6 h-6 flex items-center justify-center relative">
+                    <svg id="audio-icon" class="w-4 h-4 text-slate-400 group-hover:text-slate-900 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                        <path id="audio-waves" class="opacity-30" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                    </svg>
+                </div>
+            </button>
+            <a href="#projects" class="hidden md:inline-block font-mono text-xs tracking-wider border border-slate-900/15 hover:border-slate-900 px-5 py-2 rounded-full transition-all uppercase text-slate-900">
+                View Artifacts
+            </a>
+        </div>
+    </header>
+
+    <!-- Custom Floating Cursor Elements -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="custom-cursor-follower" id="custom-cursor-follower"></div>
+
+    <!-- 3D WebGL Background Canvas -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Main Content Stream -->
+    <main class="relative z-10 w-full">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center items-center px-6 md:px-12 relative text-center">
+            <div class="max-w-5xl flex flex-col items-center">
+                
+                <!-- Status Badge -->
+                <div class="mb-6 opacity-0 translate-y-4 glass-panel px-4 py-1.5 rounded-full flex items-center gap-2 border border-slate-900/5 shadow-sm" id="hero-badge">
+                    <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span>
+                    <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-slate-600">Active Ecosystem // Nagpur, IN</span>
+                </div>
+
+                <!-- Main Landing Query Target H1 (Google Search optimized) -->
+                <h1 class="font-mono text-5xl md:text-8xl font-bold tracking-tight mb-8 leading-none opacity-0 translate-y-10 text-slate-900" id="hero-title">
+                    YATHARTH WARBHE
+                </h1>
+                
+                <p class="text-slate-900 font-sans font-semi-bold text-base md:text-xl max-w-2xl mx-auto leading-relaxed mb-12 opacity-0 translate-y-10" id="hero-desc">
+                    Yatharth Warbhe is a forward-thinking entrepreneur, frontend developer and certified in Business Analysis & Process Management. Combining HTML & CSS development with professional business analysis to scale modern landing assets.
+                </p>
+
+                <!-- Scroll Down Hint -->
+                <div class="flex flex-col items-center gap-4 mt-4 opacity-0 translate-y-10" id="hero-scroll-indicator">
+                    <span class="font-mono text-[12px] tracking-[0.3em] uppercase text-slate-700 font-semi-bold">Scroll to explore Yatharth's vision</span>
+                    <div class="w-[1px] h-16 bg-gradient-to-b from-slate-900 to-transparent"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- "WHO IS YATHARTH WARBHE" IMMERSIVE SECTION -->
+        <section id="biography" class="min-h-screen py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto flex flex-col justify-center relative">
+            
+            <div class="space-y-4 mb-16 text-center md:text-left">
+                <div class="flex items-center gap-3 justify-center md:justify-start">
+                    <span class="h-[1px] w-8 bg-slate-300"></span>
+                    <span class="font-mono text-xs tracking-[0.4em] uppercase text-slate-500">Core Identity</span>
+                </div>
+                <!-- Dynamic Answer Header mapped for SEO crawling -->
+                <h2 class="font-mono text-3xl md:text-5xl font-bold tracking-tight text-slate-900">
+                    Who is Yatharth Warbhe?
+                </h2>
+                <p class="text-slate-900 max-w-lg text-sm md:text-base font-semi-bold">
+                    An frontend web developer and entrepreneur persuing his passion.
+                </p>
+            </div>
+
+            <!-- Interactive Biography Box Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6" id="biography-grid">
+                
+                <!-- Box 1: The Entrepreneurial Venture (Founder of Web Agency) -->
+                <div class="glass-panel glass-panel-hover p-8 rounded-2xl md:col-span-8 flex flex-col justify-between min-h-[300px] shadow-sm">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="font-mono text-[10px] tracking-[0.2em] text-blue-600 uppercase font-bold">01 // Venture Leadership</span>
+                            <div class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></div>
+                        </div>
+                        <h3 class="font-mono text-2xl font-bold text-slate-900 tracking-tight">Digital Entrepreneur</h3>
+                        <p class="text-slate-750 font-sans font-semi-bold leading-relaxed text-sm md:text-base">
+                            Yatharth is the founder and principal operator of Hiked web a frontend web agency focusing on specialized high-performance landing pages. Crafted respectfully for small-scale projects, this enterprise leverages ultra-fast response structures and precise business alignments to turn standard visitors into valuable stakeholders.
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-900/5 pt-4 mt-6">
+                        <span class="font-mono text-[10px] text-slate-700 tracking-widest uppercase">Ecosystem: Business Management &  Frontend Web Development </span>
+                    </div>
+                </div>
+
+                <!-- Box 2: Profile Picture SEO Frame -->
+                <div class="glass-panel p-3 rounded-2xl md:col-span-4 flex items-center justify-center min-h-[300px] group overflow-hidden relative shadow-sm">
+                    <div class="w-full h-full rounded-xl overflow-hidden bg-slate-100 relative border border-slate-900/5">
+                        <img src="your-profile-photo.jpg" 
+                             alt="Yatharth Warbhe - Entrepreneur and Frontend Developer Portrait" 
+                             onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23f1f5f9\'/><text x=\'50%\' y=\'50%\' font-family=\'monospace\' font-size=\'8\' fill=\'%2364748b\' dominant-baseline=\'middle\' text-anchor=\'middle\'>[ YATHARTH WARBHE ]</text></svg>'"
+                             class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700 ease-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+                    </div>
+                    <!-- Decorative corner anchors -->
+                    <div class="absolute top-0 left-0 w-4 h-4 border-t border-l border-slate-900/20 m-1.5 pointer-events-none"></div>
+                    <div class="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-slate-900/20 m-1.5 pointer-events-none"></div>
+                </div>
+
+                <!-- Box 3: Frontend Web Development Skills -->
+                <div class="glass-panel glass-panel-hover p-8 rounded-2xl md:col-span-6 flex flex-col justify-between min-h-[280px] shadow-sm">
+                    <div class="space-y-4">
+                        <span class="font-mono text-[10px] tracking-[0.2em] text-slate-500 uppercase font-bold">02 // Technical Core</span>
+                        <h3 class="font-mono text-xl font-bold text-slate-900 tracking-tight">Frontend Developer</h3>
+                        <p class="text-slate-750 font-sans font-semi-bold leading-relaxed text-xs md:text-sm">
+                            Yatharth specializes in crafting optimized client-side interfaces. Focused on building elegant, semantic structures utilizing native HTML elements and responsive styling parameters driven by clean, professional and creative CSS practices.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <span class="font-mono text-[9px] tracking-wider uppercase border border-slate-900/10 px-3 py-1 rounded-full text-slate-700 bg-white/50">Semantic HTML5</span>
+                        <span class="font-mono text-[9px] tracking-wider uppercase border border-slate-900/10 px-3 py-1 rounded-full text-slate-700 bg-white/50">Responsive CSS3</span>
+                        <span class="font-mono text-[9px] tracking-wider uppercase border border-slate-900/10 px-3 py-1 rounded-full text-slate-700 bg-white/50">Modern Layout Grid</span>
+                    </div>
+                </div>
+
+                <!-- Box 4: Business Analyst Qualification -->
+                <div class="glass-panel glass-panel-hover p-8 rounded-2xl md:col-span-6 flex flex-col justify-between min-h-[280px] shadow-sm">
+                    <div class="space-y-4">
+                        <span class="font-mono text-[10px] tracking-[0.2em] text-slate-500 uppercase font-bold">03 // Certified Strategy</span>
+                        <h3 class="font-mono text-xl font-bold text-slate-900 tracking-tight">Process Specialist</h3>
+                        <p class="text-slate-700 font-sans font-semi-bold leading-relaxed text-xs md:text-sm">
+                            Leveraging corporate operations metrics to elevate code. Yatharth holds a verified Coursera Professional Certificate in **Business Analysis & Process Management**, aligning development architecture with targeted customer acquisition paths.
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-900/5 pt-4 mt-6 flex items-center justify-between">
+                        <span class="font-mono text-[9px] text-slate-500 tracking-widest uppercase">Verified Credential Holder</span>
+                        <span class="font-mono text-[10px] text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded">Active Coursera</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- VISUAL PROJECTS GALLERY -->
+        <section id="projects" class="py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="h-[1px] w-8 bg-slate-300"></span>
+                        <span class="font-mono text-xs tracking-[0.4em] uppercase text-slate-600">Exhibit Portfolio</span>
+                    </div>
+                    <h2 class="font-mono text-3xl md:text-5xl font-bold tracking-tight text-slate-900">
+                        Yatharth's Productions
+                    </h2>
+                </div>
+                <p class="text-slate-600 font-sans font-semi-bold max-w-sm text-sm md:text-base leading-relaxed">
+                    Interactive representations of landing systems, custom CSS models, and light fluid design architectures.
+                </p>
+            </div>
+
+            <!-- 4 Elegant Project Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-fade-in-trigger" id="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card glass-panel glass-panel-hover p-8 rounded-2xl flex flex-col justify-between min-h-[400px] relative overflow-hidden group shadow-sm opacity-0 translate-y-10">
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-start">
+                            <span class="font-mono text-xs opacity-50 tracking-widest text-slate-500">01 // PRODUCTION</span>
+                            <div class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover:bg-blue-500 transition-colors"></div>
+                        </div>
+                        <h3 class="font-mono text-2xl font-bold tracking-tight text-slate-900">PROJECT ONE - STUDYQUEST</h3>
+                        <p class="text-slate-700 font-sans font-semi-bold text-sm md:text-base leading-relaxed">
+                           Study tasks managing architecture layout designed with clean HTML5 semantic skeletons. Configured specifically for students to improve productivity and providing them a gamified experience.
+                        </p>
+                    </div>
+                    <div class="mt-12 space-y-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="font-mono text-[9px] tracking-wider uppercase border border-slate-900/10 px-3 py-1 rounded-full text-slate-600 bg-white/50"> HTML5</span>
+                            <span class="font-mono text-[9px] tracking-wider uppercase border border-slate-900/10 px-3 py-1 rounded-full text-slate-600 bg-white/50"> CSS</span>
+                            <span class="font-mono text-[9px] tracking-wider uppercase border border-slate-900/10 px-3 py-1 rounded-full text-slate-600 bg-white/50"> JS</span>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-900/5 pt-6">
+                            <span class="font-mono text-[10px] tracking-widest text-slate-500 uppercase font-semibold">Live Prototype</span>
+                            <a href="https://studyquest-yw.netlify.app/" class="font-mono text-[11px] tracking-wider uppercase hover:underline flex items-center gap-1 text-slate-900">
+                                Launch Exhibit
+                                <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass-panel glass-panel-hover p-8 rounded-2xl flex flex-col justify-between min-h-[400px] relative overflow-hidden group shadow-sm opacity-0 translate-y-10">
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-start">
+                            <span class="font-mono text-xs opacity-50 tracking-widest text-slate-600">02 // DESIGN</span>
+                            <div class="w-1.5 h-1.5 rounded-full bg-slate-400 group-hover:bg-blue-600 transition-colors"></div>
+                        </div>
+                        <h3 class="font-mono text-2xl font-bold tracking-tight text-slate-900">PROJECT TWO- Coding Mentorship Program example landingpage </h3>
+                        <p class="text-slate-700 font-sans font-semi-bold text-sm md:text-base leading-relaxed">
+                           An immersive 3D landing page built for an elite coding mentorship platform.Features clean, semantic HTML5 structure. Optimized for rapid performance, fluid layouts, and maximum user engagement.
+</p>
+                        </p>
+                    </div>
+                    <div class="mt-12 space-y-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="font-mono text-[9px] tracking-wider uppercase border border-slate-900/10 px-3 py-1 rounded-full text-slate-600 bg-white/50">Animation</span>
+                            <span class="font-mono text-[9px] tracking-wider uppercase border border-slate-900/10 px-3 py-1 rounded-full text-slate-600 bg-white/50"> Tailwind CSS </span>
+                            <span class="font-mono text-[9px] tracking-wider uppercase border border-slate-900/10 px-3 py-1 rounded-full text-slate-600 bg-white/50">Three JS</span>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-900/5 pt-6">
+                            <span class="font-mono text-[10px] tracking-widest text-slate-400 uppercase font-semibold">Active Demo</span>
+                            <a href="https://coding-mentorship-example-landingpage.netlify.app/" class="font-mono text-[11px] tracking-wider uppercase hover:underline flex items-center gap-1 text-slate-900">
+                                Launch Exhibit
+                                <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glass-panel glass-panel-hover p-8 rounded-2xl flex flex-col justify-between min-h-[400px] relative overflow-hidden group shadow-sm opacity-0 translate-y-10">
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-start">
+                            <span class="font-mono text-xs opacity-50 tracking-widest text-slate-600">03 // ....</span>
+                            <div class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover:bg-blue-600 transition-colors"></div>
+                        </div>
+                        <h3 class="font-mono text-2xl font-bold tracking-tight text-slate-900">PROJECT THREE</h3>
+                        <p class="text-slate-700 font-sans font-semi-bold text-sm md:text-base leading-relaxed">Coming soon....
+                            </p>
+                    </div>
+                    <div class="mt-12 space-y-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="font-mono text-[9px] tracking-wider uppercase border border-slate-900/10 px-3 py-1 rounded-full text-slate-600 bg-white/50">....</span>
+                            <span class="font-mono text-[9px] tracking-wider uppercase border border-slate-900/10 px-3 py-1 rounded-full text-slate-600 bg-white/50">....</span>
+                            <span class="font-mono text-[9px] tracking-wider uppercase border border-slate-900/10 px-3 py-1 rounded-full text-slate-600 bg-white/50">....</span>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-900/5 pt-6">
+                            <span class="font-mono text-[10px] tracking-widest text-slate-500 uppercase font-semibold">Active Demo</span>
+                            <a href="#" class="font-mono text-[11px] tracking-wider uppercase hover:underline flex items-center gap-1 text-slate-900">
+                                Launch Exhibit
+                                <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card glass-panel glass-panel-hover p-8 rounded-2xl flex flex-col justify-between min-h-[400px] relative overflow-hidden group shadow-sm opacity-0 translate-y-10">
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-start">
+                            <span class="font-mono text-xs opacity-50 tracking-widest text-slate-600">04 // ....</span>
+                            <div class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover:bg-blue-500 transition-colors"></div>
+                        </div>
+                        <h3 class="font-mono text-2xl font-bold tracking-tight text-slate-900">PROJECT FOUR</h3>
+                        <p class="text-slate-700 font-sans font-semi-bold text-sm md:text-base leading-relaxed">Coming soon....
+                        
+                        </p>
+                    </div>
+                    <div class="mt-12 space-y-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="font-mono text-[9px] tracking-wider uppercase border border-slate-900/10 px-3 py-1 rounded-full text-slate-600 bg-white/50">....</span>
+                            <span class="font-mono text-[9px] tracking-wider uppercase border border-slate-900/10 px-3 py-1 rounded-full text-slate-600 bg-white/50">....</span>
+                            <span class="font-mono text-[9px] tracking-wider uppercase border border-slate-900/10 px-3 py-1 rounded-full text-slate-600 bg-white/50">....</span>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-900/5 pt-6">
+                            <span class="font-mono text-[10px] tracking-widest text-slate-500 uppercase font-semibold">Live Prototype</span>
+                            <a href="#" class="font-mono text-[11px] tracking-wider uppercase hover:underline flex items-center gap-1 text-slate-900">
+                                Launch Exhibit
+                                <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ACHIEVEMENTS & BLANK WORKPLACE BLOCKS -->
+        <section id="achievements" class="py-24 md:py-36 px-6 md:px-12 max-w-7xl mx-auto border-t border-slate-900/5">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="h-[1px] w-8 bg-slate-300"></span>
+                        <span class="font-mono text-xs tracking-[0.4em] uppercase text-slate-500">Milestone Log</span>
+                    </div>
+                    <h2 class="font-mono text-3xl md:text-5xl font-bold tracking-tight text-slate-900">
+                        Achievements & Future Milestones
+                    </h2>
+                </div>
+                <p class="text-slate-500 font-sans font-semi-bold max-w-sm text-sm md:text-base leading-relaxed">
+                    Reviewing certified operational excellence while maintaining editable growth tracks.
+                </p>
+            </div>
+
+            <!-- Custom Interactive Boxes (With requested editable blank spaces) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="achievements-grid">
+                
+                <!-- Achievement Card 1: Certified Business Analyst -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between min-h-[240px] shadow-sm border border-emerald-500/10 hover:border-emerald-500/30 transition-all duration-300">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="font-mono text-[10px] uppercase tracking-widest text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded">Verified Cert</span>
+                            <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                        </div>
+                        <h4 class="font-mono text-base font-bold text-slate-900 uppercase">Process Management</h4>
+                        <p class="text-xs text-slate-500 font-semi-bold leading-relaxed">
+                            Coursera Certification in **Business Analysis & Process Management**. Trained to optimize backend/frontend operations.
+                        </p>
+                    </div>
+                    <span class="font-mono text-[9px] text-slate-400 mt-4">COURSERA VALID // ACTIVE</span>
+                </div>
+
+                <!-- Editable Blank Box 1 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between min-h-[240px] shadow-sm border border-dashed border-slate-300 hover:border-slate-900/30 transition-all duration-300 group">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="font-mono text-[10px] uppercase tracking-widest text-slate-400 group-hover:text-slate-900 transition-colors">Future Track</span>
+                            <svg class="w-5 h-5 text-slate-300 group-hover:text-slate-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+                        </div>
+                        <h4 class="font-mono text-base font-bold text-slate-400 uppercase group-hover:text-slate-600 transition-colors"> Next Goal </h4>
+                        <p class="text-xs text-slate-400 font-semi-bold leading-relaxed group-hover:text-slate-500 transition-colors">
+                            Do best to get certificates, technical qualification, and enterprise milestone.
+                        </p>
+                    </div>
+                    <span class="font-mono text-[9px] text-slate-300 group-hover:text-slate-400 transition-colors">HUSTLING</span>
+                </div>
+
+                <!-- Editable Blank Box 2 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between min-h-[240px] shadow-sm border border-dashed border-slate-300 hover:border-slate-900/30 transition-all duration-300 group">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="font-mono text-[10px] uppercase tracking-widest text-slate-400 group-hover:text-slate-900 transition-colors">Future Track</span>
+                            <svg class="w-5 h-5 text-slate-300 group-hover:text-slate-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+                        </div>
+                        <h4 class="font-mono text-base font-bold text-slate-400 uppercase group-hover:text-slate-600 transition-colors"> Enterprise Goal </h4>
+                        <p class="text-xs text-slate-400 font-semi-bold leading-relaxed group-hover:text-slate-500 transition-colors">
+                            Currently learning about entrepreneurship and managing studies with Hiked Web my web dev agency.
+                        </p>
+                    </div>
+                    <span class="font-mono text-[9px] text-slate-300 group-hover:text-slate-400 transition-colors">LEARNING</span>
+                </div>
+
+                <!-- Editable Blank Box 3 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between min-h-[240px] shadow-sm border border-dashed border-slate-300 hover:border-slate-900/30 transition-all duration-300 group">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="font-mono text-[10px] uppercase tracking-widest text-slate-400 group-hover:text-slate-900 transition-colors">Future Track</span>
+                            <svg class="w-5 h-5 text-slate-300 group-hover:text-slate-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+                        </div>
+                        <h4 class="font-mono text-base font-bold text-slate-400 uppercase group-hover:text-slate-600 transition-colors"> Technical Milestone </h4>
+                        <p class="text-xs text-slate-400 font-semi-bold leading-relaxed group-hover:text-slate-500 transition-colors">
+                           Trying to learn about current and upcoming technologies to keep myself up to date.
+                        </p>
+                    </div>
+                    <span class="font-mono text-[9px] text-slate-300 group-hover:text-slate-400 transition-colors">LEARNING</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- BUSINESS PERFORMANCE STATISTICS -->
+        <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-slate-900/5 relative">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <!-- Metric 1 -->
+                <div class="space-y-2 p-6 glass-panel rounded-xl shadow-sm">
+                    <span class="font-mono text-xs text-slate-500 uppercase tracking-widest">YATHARTH STUDY PATH</span>
+                    <h3 class="font-mono text-4xl font-bold text-slate-900">HTML & CSS</h3>
+                    <p class="text-xs text-slate-500 font-semi-bold leading-relaxed">Developing fluid layouts, responsive parameters, and clean browser render frameworks.</p>
+                </div>
+                <!-- Metric 2 -->
+                <div class="space-y-2 p-6 glass-panel rounded-xl shadow-sm">
+                    <span class="font-mono text-xs text-slate-500 uppercase tracking-widest">Hiked Web STANDARD</span>
+                    <h3 class="font-mono text-4xl font-bold text-slate-900">&lt; Creativity Focused</h3>
+                    <p class="text-xs text-slate-500 font-semi-bold leading-relaxed">Using creative animations and effects helping convert visitors to clients.</p>
+                </div>
+                <!-- Metric 3 -->
+                <div class="space-y-2 p-6 glass-panel rounded-xl shadow-sm">
+                    <span class="font-mono text-xs text-slate-500 uppercase tracking-widest">QUALIFICATION INDEX</span>
+                    <h3 class="font-mono text-4xl font-bold text-slate-900">01 CERT</h3>
+                    <p class="text-xs text-slate-500 font-semi-bold leading-relaxed">Professional Business Analyst & Process Manager (Coursera Accredited).</p>
+                     <div class="flex gap-6 font-mono text-[12px] tracking-wider uppercase text-slate-900">
+                    <a href="Coursera Business Analysis & Process Management Certificate.pdf" class="hover:text-slate-900 font-bold transition-colors">Click here to view certificate.</a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FOOTER CONNECT -->
+        <footer class="py-16 text-center border-t border-slate-900/5 relative">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="font-mono text-[12px] tracking-widest text-slate-900 font-bold uppercase">
+                   © 2026 YATHARTH WARBHE. ALL RIGHTS RESERVED.
+                </p>
+                <div class="flex gap-6 font-mono text-[12px] tracking-wider uppercase text-slate-900">
+                    <a href="https://github.com/yatharthwarbhe" class="hover:text-slate-900 font-bold transition-colors">Github</a>
+                    <a href="#" class="hover:text-slate-900 font-bold transition-colors">LinkedIn</a>
+                    <a href="#" class="hover:text-slate-900 font-bold transition-colors">Operational Brief</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- CORE SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        // --- SOUND DESIGN ENGINE (WEB AUDIO API SYNTHESIZER) ---
+        let audioCtx = null;
+        let isMuted = true;
+        
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        // Synthesize a high-fidelity subtle interface response trigger
+        function playInterfaceClick(pitch = 220, duration = 0.08) {
+            if (isMuted) return;
+            initAudio();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(pitch, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(80, audioCtx.currentTime + duration);
+
+            gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + duration);
+        }
+
+        // Subtle low frequency wave on scroll change
+        function playWhooshSweep() {
+            if (isMuted) return;
+            initAudio();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(100, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(260, audioCtx.currentTime + 0.35);
+
+            gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.35);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.35);
+        }
+
+        // Toggle Sound State
+        const audioBtn = document.getElementById('audio-toggle');
+        const audioLabel = audioBtn.querySelector('span');
+        const audioWaves = document.getElementById('audio-waves');
+
+        audioBtn.addEventListener('click', () => {
+            isMuted = !isMuted;
+            if (!isMuted) {
+                initAudio();
+                audioLabel.innerText = "SOUND ON";
+                audioWaves.style.opacity = "1";
+                playInterfaceClick(330, 0.15);
+            } else {
+                audioLabel.innerText = "SOUND OFF";
+                audioWaves.style.opacity = "0.3";
+            }
+        });
+
+
+        // --- FLUID LIGHT CURSOR FOLLOW INTERACTIVITY ---
+        const cursor = document.getElementById('custom-cursor');
+        const follower = document.getElementById('custom-cursor-follower');
+
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let fX = mouseX;
+        let fY = mouseY;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            cursor.style.left = mouseX + 'px';
+            cursor.style.top = mouseY + 'px';
+        });
+
+        function renderFollower() {
+            const ease = 0.12; 
+            fX += (mouseX - fX) * ease;
+            fY += (mouseY - fY) * ease;
+
+            follower.style.left = fX + 'px';
+            follower.style.top = fY + 'px';
+
+            requestAnimationFrame(renderFollower);
+        }
+        renderFollower();
+
+        // Hover expansions for elements on light canvas background
+        const interactives = document.querySelectorAll('a, button, .project-card, .glass-panel-hover');
+        interactives.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1.8)';
+                cursor.style.backgroundColor = '#3b82f6';
+                follower.style.transform = 'translate(-50%, -50%) scale(0.6)';
+                follower.style.borderColor = '#3b82f6';
+                playInterfaceClick(290, 0.05); 
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                cursor.style.backgroundColor = '#0f172a';
+                follower.style.transform = 'translate(-50%, -50%) scale(1)';
+                follower.style.borderColor = 'rgba(15, 23, 42, 0.15)';
+            });
+        });
+
+
+        // --- THREE.JS INTERACTIVE WEBGL BACKGROUND (LIGHT OPTIMIZED) ---
+        const canvas = document.querySelector('#webgl-canvas');
+        const scene = new THREE.Scene();
+
+        const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.z = 4.5;
+
+        // Renderer with transparent alpha channel to showcase light body gradients
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        const dynamic3DGroup = new THREE.Group();
+        scene.add(dynamic3DGroup);
+
+        // Core Morphing Geodesic Crystal (Light Wireframe aesthetic)
+        const coreGeometry = new THREE.IcosahedronGeometry(1.2, 1);
+        const coreMaterial = new THREE.MeshBasicMaterial({
+            color: 0x3b82f6, // Sleek brand accent blue
+            wireframe: true,
+            transparent: true,
+            opacity: 0.30, // Exceedingly soft and elegant overlay
+            blending: THREE.NormalBlending
+        });
+        const crystalCore = new THREE.Mesh(coreGeometry, coreMaterial);
+        dynamic3DGroup.add(crystalCore);
+
+        const originalPositions = coreGeometry.attributes.position.clone();
+        coreGeometry.userData = { originalPositions: originalPositions };
+
+        // Swirling dust particle constellation (Pastel Silver Slate color spectrum)
+        const particleCount = 1200;
+        const particlePositions = new Float32Array(particleCount * 3);
+
+        for (let i = 0; i < particleCount * 3; i += 3) {
+            const r = 2.0 + Math.random() * 2.5;
+            const theta = Math.random() * Math.PI * 2;
+            const phi = Math.acos((Math.random() * 2) - 1);
+
+            particlePositions[i] = r * Math.sin(phi) * Math.cos(theta);
+            particlePositions[i + 1] = r * Math.sin(phi) * Math.sin(theta);
+            particlePositions[i + 2] = r * Math.cos(phi);
+        }
+
+        const particleGeometry = new THREE.BufferGeometry();
+        particleGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+
+        const particleMaterial = new THREE.PointsMaterial({
+            size: 0.016,
+            color: 0x64748b, // slate-500
+            transparent: true,
+            opacity: 0.50,
+            blending: THREE.NormalBlending
+        });
+
+        const particleSystem = new THREE.Points(particleGeometry, particleMaterial);
+        dynamic3DGroup.add(particleSystem);
+
+        let targetX = 0, targetY = 0;
+        let currentX = 0, currentY = 0;
+
+        window.addEventListener('mousemove', (e) => {
+            targetX = (e.clientX / window.innerWidth) - 0.5;
+            targetY = (e.clientY / window.innerHeight) - 0.5;
+        });
+
+        const clock = new THREE.Clock();
+        
+        function renderScene() {
+            const time = clock.getElapsedTime();
+
+            crystalCore.rotation.x = time * 0.04;
+            crystalCore.rotation.y = time * 0.06;
+            particleSystem.rotation.y = -time * 0.02;
+
+            // Fluid Mesh Morph Wave equations
+            const positionAttribute = crystalCore.geometry.attributes.position;
+            const origPositions = crystalCore.geometry.userData.originalPositions;
+            const vertex = new THREE.Vector3();
+            const origVertex = new THREE.Vector3();
+            
+            for (let i = 0; i < positionAttribute.count; i++) {
+                origVertex.fromBufferAttribute(origPositions, i);
+                const wave = Math.sin(time * 1.8 + origVertex.x * 2.2 + origVertex.y * 2.2) * 0.10;
+                vertex.copy(origVertex).addScaledVector(origVertex.clone().normalize(), wave);
+                positionAttribute.setXYZ(i, vertex.x, vertex.y, vertex.z);
+            }
+            positionAttribute.needsUpdate = true;
+
+            // Tracking Mouse movement with inertia dampening
+            currentX += (targetX - currentX) * 0.05;
+            currentY += (targetY - currentY) * 0.05;
+
+            dynamic3DGroup.rotation.y = currentX * 0.7;
+            dynamic3DGroup.rotation.x = -currentY * 0.7;
+
+            renderer.render(scene, camera);
+            requestAnimationFrame(renderScene);
+        }
+
+        window.onload = function() {
+            renderScene();
+        };
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+
+        // --- GSAP CINEMATIC SCROLL ENGINE CONTROLS ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Progress bar mapping
+        gsap.to("#scroll-progress", {
+            width: "100%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: "body",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: true
+            }
+        });
+
+        // 1. Hero entrance sequence
+        const entryTimeline = gsap.timeline();
+        entryTimeline.to("#hero-badge", { opacity: 1, y: 0, duration: 1.0, ease: "power3.out" })
+                     .to("#hero-title", { opacity: 1, y: 0, duration: 1.4, ease: "power4.out" }, "-=0.6")
+                     .to("#hero-desc", { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, "-=1.0")
+                     .to("#hero-scroll-indicator", { opacity: 0.6, y: 0, duration: 1 }, "-=0.6");
+
+        // 2. Adjusting 3D coordinates based on active viewport coordinates
+        gsap.to(dynamic3DGroup.position, {
+            z: 1.5,
+            x: -1.2,
+            scrollTrigger: {
+                trigger: "#biography",
+                start: "top bottom",
+                end: "top top",
+                scrub: 1
+            }
+        });
+
+        gsap.to(crystalCore.material, {
+            opacity: 0.12,
+            scrollTrigger: {
+                trigger: "#biography",
+                start: "top bottom",
+                end: "top top",
+                scrub: 1
+            }
+        });
+
+        // Spin group on project viewport entrance
+        gsap.to(dynamic3DGroup.rotation, {
+            z: Math.PI * 0.5,
+            scrollTrigger: {
+                trigger: "#projects",
+                start: "top bottom",
+                end: "top top",
+                scrub: 1,
+                onEnter: () => playWhooshSweep()
+            }
+        });
+
+        // Recenter geometry on future milestones
+        gsap.to(dynamic3DGroup.position, {
+            x: 0,
+            z: 0.2,
+            scrollTrigger: {
+                trigger: "#achievements",
+                start: "top bottom",
+                end: "top center",
+                scrub: 1
+            }
+        });
+
+        // 3. Smooth Cascade revealed triggers for works
+        gsap.to(".project-card", {
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            stagger: 0.25,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: "#projects-grid",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+            }
+        });
+    </script>
+</body>
+</html>
